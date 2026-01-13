@@ -2,7 +2,7 @@ import java.io.*;
 
 /**
  * Exercise 3: Track how many times a program has been executed
- * 
+ *
  * Requirements:
  * - Store an execution count in a file named Exercise17_03.dat
  * - Each time this program runs, increment the count by 1
@@ -11,40 +11,46 @@ import java.io.*;
  *   1. Read existing count (if file exists)
  *   2. Increment the count
  *   3. Write updated count back to file
- * 
+ *
  * @author Maddy Puryear
  */
 public class Exercise17_03 {
-    
+
     public static void main(String[] args) throws IOException {
-        
+
         File file = new File("Exercise17_03.dat");
         int count = 0;
-        
+
         // STEP 1: Read existing count if file exists
         // TODO: Check if file exists using file.exists()
-        
-        
-        // TODO: If file exists, open DataInputStream and read the count
-        
-        
-        // TODO: Close the input stream (or use try-with-resources)
-        
-        
+        if (file.exists()){
+            // TODO: If file exists, open DataInputStream and read the count
+                try(DataInputStream input = new DataInputStream(
+                        new FileInputStream(file))){
+                    System.out.println(input.readInt());
+
+                    // TODO: Close the input stream (or use try-with-resources)
+                    input.close();
+                }
+        }
+
+
         // STEP 2: Increment the count
         // TODO: Add 1 to count
-        
-        
+        count++;
+
+
         // STEP 3: Write updated count back to file
         // TODO: Create DataOutputStream for the file
-        
-        
-        // TODO: Write the updated count
-        
-        
-        // TODO: Close the output stream (or use try-with-resources)
-        
-        
+        try(DataOutputStream output = new DataOutputStream(
+                new FileOutputStream(file))){
+            // TODO: Write the updated count
+            output.writeInt(count);
+
+            // TODO: Close the output stream (or use try-with-resources)
+            output.close();
+        }
+
         // Display the result
         System.out.println("This program has been executed " + count + " time(s).");
     }
