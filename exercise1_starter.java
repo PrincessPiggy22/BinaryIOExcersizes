@@ -10,7 +10,7 @@ import java.io.*;
  * - Integers should be separated by a space
  * - Use text I/O (PrintWriter)
  * 
- * @author Your Name
+ * @author Maddy Puryear
  */
 public class Exercise17_01 {
     
