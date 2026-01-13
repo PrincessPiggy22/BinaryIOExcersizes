@@ -12,11 +12,13 @@ import java.io.*;
  * 
  * @author Maddy Puryear
  */
+import java.io.File;       
+import java.io.IOException; 
 public class Exercise17_01 {
     
     public static void main(String[] args) throws IOException {
         // TODO: Create a File object for "Exercise17_01.txt"
-        
+        // File file = new File("Exercise17_01.txt");
         
         // TODO: Create PrintWriter in APPEND mode
         // Hint: Use FileWriter with append parameter set to true
